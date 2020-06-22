@@ -1,0 +1,97 @@
+¿987r
+  {
+    "id": "RC120101",
+    "nombre": "caribeña",
+    "frecuencia": "FM",
+    "direccion": "av brasil",
+    "numero_radio": "93.32",
+    "email": "radio@gmail.com",
+    "ruc": "20454545452",
+    "telefono": "985685612",
+    "descripcion": "aqui estamos",
+
+    "representante_legal": "Representante 1",
+    "representante_comercial": "Representante 1",
+
+    "distrito_id": "120101",
+    "provincia_id": "120101",
+    "departamento_id": "120101"
+
+  },
+  {
+
+    "id": "RC120101",
+    "nombre": "caribeña",
+    "frecuencia": "FM",
+*    "direccion": "av brasil",
+    "numero_radio": "93.32",
+    "email": "radio@gmail.com",
+    "ruc": "20454545452",
+    "telefono": "985685612",
+    "descripcion": "aqui estamos",
+
+    "representante_legal": "Representante 1",
+    "representante_comercial": "Representante 1",
+
+    "distrito_id": "120101",
+    "provincia_id": "120101",
+    "departamento_id": "120125"
+
+  },
+  {
+    "id": "RC120101",
+    "nombre": "caribeña",
+    "frecuencia": "FM",
+    "direccion": "av brasil",
+    "numero_radio": "93.32",
+    "email": "radio@gmail.com",
+    "ruc": "20454545452",
+    "telefono": "985685612",
+    "descripcion": "aqui estamos",
+
+    "representante_legal": "Representante 1",
+    "representante_comercial": "Representante 1",
+
+    "distrito_id": "120101",
+    "provincia_id": "120101",
+    "departamento_id": "120114"
+  },
+  {
+
+    "id": "RC120101",
+    "nombre": "caribeña",
+    "frecuencia": "FM",
+    "direccion": "av brasil",
+    "numero_radio": "93.32",
+    "email": "radio@gmail.com",
+    "ruc": "20454545452",
+    "telefono": "985685612",
+    "descripcion": "aqui estamos",
+
+    "representante_legal": "Representante 1",
+    "representante_comercial": "Representante 1",
+
+    "distrito_id": "120101",
+    "provincia_id": "120101",
+    "departamento_id": "120121"
+  },
+  {
+
+    "id": "RC120101",
+    "nombre": "caribeña",
+    "frecuencia": "FM",
+    "direccion": "av brasil",
+    "numero_radio": "93.32",
+    "email": "radio@gmail.com",
+    "ruc": "20454545452",
+    "telefono": "985685612",
+    "descripcion": "aqui estamos",
+
+    "representante_legal": "Representante 1",
+    "representante_comercial": "Representante 1",
+
+    "distrito_id": "120101",
+    "provincia_id": "120101",
+    "departamento_id": "120101"
+  }
+]

@@ -12,7 +12,7 @@ class EmisoraSeeder extends Seeder
     public function run()
     {
         DB::table('emisoras')->insert([
-
+            'id' =>'92',
             'nombrecadena'=>'CABLE VISION ICA',
             'representanteLegal'=>'AUGUSTO PEÑA ARAUJO ',
             'representanteComercial'=>'SIN FRECUENCIA',

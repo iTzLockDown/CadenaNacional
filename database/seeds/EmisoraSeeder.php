@@ -13,21 +13,23 @@ class EmisoraSeeder extends Seeder
     {
         DB::table('emisoras')->insert([
 
-            'nombrecadena'=>'RADIO FIESTA',
-            'representanteLegal'=>'FREDY ANDALUZ',
-            'representanteComercial'=>'NICODEMO CAJACURI MAROTAZO EIRL',
-            'frecuencia'=>'VHF',
+            'nombrecadena'=>'CABLE VISION ICA',
+            'representanteLegal'=>'AUGUSTO PEÑA ARAUJO ',
+            'representanteComercial'=>'SIN FRECUENCIA',
+            'frecuencia'=>'-',
             'direccion'=>'-',
-            'numeroRadio'=>'CANAL 2',
-            'email'=>'elgrupofiesta@hotmail.com',
+            'numeroRadio'=>'-',
+            'email'=>'cablevisionoroya@hotmail.com',
             'ruc'=>'-',
             'descripcion'=>'-',
-            'telefono'=>'993 055 559 / 968 444 410',
-            'estacion'=>'TELEVISION',
+            'telefono'=>'064 391 123 / 999 903 467 / 98',
+            'estacion'=>'RADIO',
             'estado'=>'1',
             'departamento'=>'12',
-            'provincia'=>'1203',
-            'distrito'=>'120301'
+            'provincia'=>'1208',
+            'distrito'=>'120808'
         ]);
     }
-}	
+}
+
+

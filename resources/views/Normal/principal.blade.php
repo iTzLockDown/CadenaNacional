@@ -57,6 +57,7 @@
                                 @endif
 
                             @else
+                            <li><a href="{{ route('register') }}">Registrate</a></li>
                                 <li><a href="{{ route('login') }}">Iniciar Sesion</a></li>
 
                                 {{--                        @if (Route::has('register'))--}}

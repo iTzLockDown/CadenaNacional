@@ -146,10 +146,7 @@
                     <a class="nav-link" href="{{route('usuario.lista')}}">
                         <i class="nav-icon icon-user"></i> Usuario</a>
                 </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('importar')}}">
-                            <i class="nav-icon icon-doc"></i> Importar Emisoras</a>
-                    </li>
+              
 
                 @endif
                 @if(Auth::user()->rol ==1 || Auth::user()->rol ==2 )

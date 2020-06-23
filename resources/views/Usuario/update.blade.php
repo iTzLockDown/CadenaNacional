@@ -36,7 +36,7 @@
                 <label class="col-md-3 col-form-label">Permisos</label>
                 <div class="col-md-3">
 
-                    {{Form::select('rol', ['1' => 'Admininitrador', '2' => 'Usuario', '3'=>'Usuario Comun'],null ,['class'=>'form-control'])}}
+                    {{Form::select('rol', ['1' => 'Administrador', '2' => 'Usuario', '3'=>'Usuario Comun'],null ,['class'=>'form-control'])}}
                 </div>
 
             </div>

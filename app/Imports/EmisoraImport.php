@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\emisora;
+use App\Emisora;
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class EmisoraImport implements ToModel

@@ -103,8 +103,8 @@ class AdministradorController extends Controller
 
     public function VerEmisora()
     {
-        $TraerMasPoblados = Distrito::limit(50)
-            ->orderBy('habitantes', 'DESC')
+        $TraerMasPoblados = Distrito::
+            orderBy('habitantes', 'DESC')
             ->get();
         $departamento = Departamento::pluck('name','id' );
         return view('welcome', compact('departamento', 'TraerMasPoblados'));
@@ -116,6 +116,14 @@ class AdministradorController extends Controller
             $emisoras = Emisora::emisoras($id);
             return response()->json($emisoras);
         }
+    }
+
+    public function  getEmisoraProv(Request $request, $id)
+    {
+         if($request->ajax()){
+             $emisoras = Emisora::EmisoraProv($id);
+             return response()->json($emisoras);
+         }
     }
 
     public function  getEmisoras(Request $request, $id, $distrito)

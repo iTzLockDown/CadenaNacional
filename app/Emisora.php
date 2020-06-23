@@ -17,6 +17,11 @@ class Emisora extends Model
             ->get();
     }
 
+    public static function EmisoraProv($id){
+        return Emisora::where('departamento','=',$id)->where('estado',1)
+            ->get();
+    }
+
     public static function emisora($id){
         return Emisora::find($id);
     }

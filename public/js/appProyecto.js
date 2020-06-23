@@ -56,6 +56,21 @@ $("#departamento").change(event => {
             $("#provincia").append(`<option value=${element.id}> ${element.name} </option>`);
         });
     });
+
+    $.get(`emisorabusprov/${event.target.value}`, function(res, sta){
+        $("#myTable").empty();
+        $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
+            `                     <th>Representante Legal</th>` +
+            `                     <th>Representante Comercial</th>` +
+            `                     <th>Telefono</th><th></th></tr></thead>`);
+        res.forEach(element => {
+            $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
+                `                     <td>${element.representanteLegal}</td>` +
+                `                     <td>${element.representanteComercial}</td>` +
+                `                     <td>${element.telefono}</td>` +
+                `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
+        });
+    });
 });
 
 

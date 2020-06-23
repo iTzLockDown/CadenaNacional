@@ -34,6 +34,7 @@ Route::get('provincias/{id}','AdministradorController@getProvincia');
 Route::get('distritos/{id}','AdministradorController@getDistrito');
 Route::get('emisoras/{id}','AdministradorController@getEmisora');
 Route::get('emisorabus/{id}','AdministradorController@getEmi');
+Route::get('emisorabusprov/{id}','AdministradorController@getEmisoraProv');
 Route::get('emisorasbus/{id}/{distritos}', 'AdministradorController@getEmisoras');
 
 Route::get('/home', 'HomeController@index')->name('home');

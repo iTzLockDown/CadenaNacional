@@ -70,3 +70,7 @@ Route::get('/verificauser/{id}', 'AdministradorController@verificaUsu')->name('u
 Route::get('/exportar', function () {
     return Excel::download(new \App\Exports\EmisoraExport(), 'emisoras.xlsx');
 })->name('exportar.excel');
+
+
+Route::get('importar','AdministradorController@importar' )->name('importar');
+Route::post('import-list-excel','AdministradorController@importExcel')->name('emisoras.import.excel');

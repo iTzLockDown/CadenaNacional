@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Departamento;
 use App\Distrito;
 use App\Emisora;
+use App\Imports\EmisoraImport;
 use App\Provincia;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Excel;
 
 class AdministradorController extends Controller
 {
@@ -171,5 +173,16 @@ class AdministradorController extends Controller
     {
         $departamento = Departamento::pluck('name','id' );
         return view('Emisora.createcli', compact('departamento'));
+    }
+
+    public function  importExcel(Request $request)
+    {
+        $file=$request->file('file');
+        Excel::import(new EmisoraImport, $file);
+        return back()->with('message', 'Importacion exitosa');
+    }
+    public  function importar()
+    {
+        return view('Emisora.importar');
     }
 }

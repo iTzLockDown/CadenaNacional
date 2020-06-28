@@ -60,13 +60,13 @@ $("#departamento").change(event => {
     $.get(`emisorabusprov/${event.target.value}`, function(res, sta){
         $("#myTable").empty();
         $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
-            `                     <th>Representante Legal</th>` +
-            `                     <th>Representante Comercial</th>` +
+            `                     <th>Frecuencia</th>` +
+            `                     <th>Email</th>` +
             `                     <th>Telefono</th><th></th></tr></thead>`);
         res.forEach(element => {
             $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
-                `                     <td>${element.representanteLegal}</td>` +
-                `                     <td>${element.representanteComercial}</td>` +
+                `                     <td>${element.numeroRadio} ${element.frecuencia}</td>` +
+                `                     <td>${element.email}</td>` +
                 `                     <td>${element.telefono}</td>` +
                 `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
         });
@@ -86,13 +86,13 @@ $("#provincia").change(event => {
     $.get(`emisorabusprovincia/${event.target.value}`, function(res, sta){
         $("#myTable").empty();
         $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
-            `                     <th>Representante Legal</th>` +
-            `                     <th>Representante Comercial</th>` +
+            `                     <th>Frecuencia</th>` +
+            `                     <th>Email</th>` +
             `                     <th>Telefono</th><th></th></tr></thead>`);
         res.forEach(element => {
             $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
-                `                     <td>${element.representanteLegal}</td>` +
-                `                     <td>${element.representanteComercial}</td>` +
+                `                     <td>${element.numeroRadio} ${element.frecuencia}</td>` +
+                `                     <td>${element.email}</td>` +
                 `                     <td>${element.telefono}</td>` +
                 `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
         });
@@ -111,13 +111,13 @@ $("#distrito").change(event => {
     $.get(`emisorabusdistrito/${event.target.value}`, function(res, sta){
         $("#myTable").empty();
         $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
-            `                     <th>Representante Legal</th>` +
-            `                     <th>Representante Comercial</th>` +
+            `                     <th>Frecuencia</th>` +
+            `                     <th>Email</th>` +
             `                     <th>Telefono</th><th></th></tr></thead>`);
         res.forEach(element => {
             $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
-                `                     <td>${element.representanteLegal}</td>` +
-                `                     <td>${element.representanteComercial}</td>` +
+                `                     <td>${element.numeroRadio} ${element.frecuencia}</td>` +
+                `                     <td>${element.email}</td>` +
                 `                     <td>${element.telefono}</td>` +
                 `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
         });
@@ -140,13 +140,13 @@ $("#emisora").change(event => {
     $.get(`emisorasbus/${event.target.value}/${$distrito}`, function(res, sta){
         $("#myTable").empty();
         $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
-            `                     <th>Representante Legal</th>` +
-            `                     <th>Representante Comercial</th>` +
+            `                     <th>Frecuencia</th>` +
+            `                     <th>Email</th>` +
             `                     <th>Telefono</th><th></th></tr></thead>`);
         res.forEach(element => {
             $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
-                `                     <td>${element.representanteLegal}</td>` +
-                `                     <td>${element.representanteComercial}</td>` +
+                `                     <td>${element.numeroRadio} ${element.frecuencia}</td>` +
+                `                     <td>${element.email}</td>` +
                 `                     <td>${element.telefono}</td>` +
                 `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
         });
@@ -158,13 +158,13 @@ $("#emisoraPobl").change(event => {
     $.get(`emisorasbus/${event.target.value}/${$distrito}`, function(res, sta){
         $("#myTable").empty();
         $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
-            `                     <th>Representante Legal</th>` +
-            `                     <th>Representante Comercial</th>` +
+            `                     <th>Frecuencia</th>` +
+            `                     <th>Email</th>` +
             `                     <th>Telefono</th><th></th></tr></thead>`);
         res.forEach(element => {
             $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
-                `                     <td>${element.representanteLegal}</td>` +
-                `                     <td>${element.representanteComercial}</td>` +
+                `                     <td>${element.numeroRadio} ${element.frecuencia}</td>` +
+                `                     <td>${element.email}</td>` +
                 `                     <td>${element.telefono}</td>` +
                 `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
         });

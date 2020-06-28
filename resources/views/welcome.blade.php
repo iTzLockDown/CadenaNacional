@@ -106,18 +106,19 @@
                         <div class="modal-body">
 
                             <section id="trainer-list">
-                                <h3>Información:</h3>
                                 <div class="trainer row">
                                     <div class="col-xs-12 col-sm-12">
+                                        <p class="card-text"> Titular                :  <label for="" id="repComercial"></label></p>
                                         <p class="card-text"> Respresentate Legal    :  <label for="" id="respLegal"></label></p>
-                                        <p class="card-text"> Representante Comercial:  <label for="" id="repComercial"></label></p>
-                                        <p class="card-text"> Ruc                    :  <label for="" id="ruc"></label></p>
-                                        <p class="card-text"> Dirección              :  <label for="" id="direccion"></label></p>
-                                        <p class="card-text"> Frecuencia             :  <label for="" id="frencuencia"></label></p>
-                                        <p class="card-text"> Numero de Radio        :  <label for="" id="numeroRad"></label></p>
+                                        <p class="card-text"> Autorización RVM N°    :  <label for="" id="autorizacion"></label></p>
+                                        <p class="card-text"> Frecuencia             :  <label for="" id="numeroRad"></label> <label for="" id="frencuencia"></label></p>
+                                        <p class="card-text"> Estación               :  <label for="" id="estacion"></label></p>
                                         <p class="card-text"> Email                  :  <label for="" id="email"></label></p>
                                         <p class="card-text"> Telefono               :  <label for="" id="telefono"></label></p>
-                                        <p class="card-text"> Descripcion            :  <label for="" id="descripcion"></label></p>
+                                        <p class="card-text"> Periodista             :  <label for="" id="periodista1"> </label> Cel: <label for="" id="telfper1"></label></p>
+                                        <p class="card-text"> Periodista             :  <label for="" id="periodista2"> </label> Cel: <label for="" id="telfper2"></label></p>
+                                        <p class="card-text"> Ruc                    :  <label for="" id="ruc"></label></p>
+                                        <p class="card-text"> Dirección              :  <label for="" id="direccion"></label></p>
                                     </div>
                                 </div>
                             </section>

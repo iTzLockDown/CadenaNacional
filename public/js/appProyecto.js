@@ -82,6 +82,22 @@ $("#provincia").change(event => {
             $("#distrito").append(`<option value=${element.id}> ${element.name} </option>`);
         });
     });
+
+    $.get(`emisorabusprovincia/${event.target.value}`, function(res, sta){
+        $("#myTable").empty();
+        $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
+            `                     <th>Representante Legal</th>` +
+            `                     <th>Representante Comercial</th>` +
+            `                     <th>Telefono</th><th></th></tr></thead>`);
+        res.forEach(element => {
+            $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
+                `                     <td>${element.representanteLegal}</td>` +
+                `                     <td>${element.representanteComercial}</td>` +
+                `                     <td>${element.telefono}</td>` +
+                `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
+        });
+    });
+
 });
 
 $("#distrito").change(event => {
@@ -91,6 +107,21 @@ $("#distrito").change(event => {
         $("#emisora").append(`<option> Seleccione una opcion </option>`);
         $("#emisora").append(`<option value=RADIO> Radio </option>`);
         $("#emisora").append(`<option value=TELEVISION> Television </option>`);
+
+    $.get(`emisorabusdistrito/${event.target.value}`, function(res, sta){
+        $("#myTable").empty();
+        $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
+            `                     <th>Representante Legal</th>` +
+            `                     <th>Representante Comercial</th>` +
+            `                     <th>Telefono</th><th></th></tr></thead>`);
+        res.forEach(element => {
+            $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
+                `                     <td>${element.representanteLegal}</td>` +
+                `                     <td>${element.representanteComercial}</td>` +
+                `                     <td>${element.telefono}</td>` +
+                `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
+        });
+    });
 });
 
 $("#distritoPobl").change(event => {
@@ -151,7 +182,12 @@ function alert($id)
     var numeroRad=$("#numeroRad");
     var email=$("#email");
     var telefono=$("#telefono");
-    var descripcion=$("#descripcion");
+    var autorizacion=$("#autorizacion");
+    var periodista1=$("#periodista1");
+    var telfper1=$("#telfper1");
+    var periodista2=$("#periodista2");
+    var telfper2=$("#telfper2");
+    var estacion = $("#estacion");
     $.get(`emisorabus/${$id}`, function(res){
         nombre.empty();
         respLegal.empty();
@@ -161,19 +197,31 @@ function alert($id)
         frencuencia.empty();
         numeroRad.empty();
         email.empty();
+        estacion.empty();
         telefono.empty();
-        descripcion.empty();
         nombre.append(res.nombrecadena);
+
+        autorizacion.empty();
+        periodista1.empty();
+        telfper1.empty();
+        periodista2.empty();
+        telfper2.empty();
 
         respLegal.append(res.representanteLegal);
         repComercial.append(res.representanteComercial);
         ruc.append(res.ruc);
+        estacion.append(res.estacion);
         direccion.append(res.direccion);
         frencuencia.append(res.frecuencia);
         numeroRad.append(res.numeroRadio);
         email.append(res.email);
         telefono.append(res.telefono);
-        descripcion.append(res.descripcion);
+
+        autorizacion.append(res.autorizacion);
+        periodista1.append(res.nomper1);
+        telfper1.append(res.telper1);
+        periodista2.append(res.nomper2);
+        telfper2.append(res.telper2);
     });
 }
 $("#emisoraPobl").change(event => {

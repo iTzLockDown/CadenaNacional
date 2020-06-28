@@ -105,6 +105,39 @@
                     </div>
                 </div>
 
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Periodista</label>
+                <div class="col-md-3">
+                    {{ Form::text('nomper1',null,$attributes = ['class'=>'form-control', 'placeholder'=>'Periodista...','autocomplete'=>'off',])}}
+
+                </div>
+
+                <label class="col-md-2 col-form-label">Telefono</label>
+                <div class="col-md-4">
+                    {{ Form::text('telper1',null,$attributes = ['class'=>'form-control', 'placeholder'=>'Telefono/celular','autocomplete'=>'off',])}}
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Periodista</label>
+                <div class="col-md-3">
+                    {{ Form::text('nomper2',null,$attributes = ['class'=>'form-control', 'placeholder'=>'Periodista...','autocomplete'=>'off',])}}
+
+                </div>
+
+                <label class="col-md-2 col-form-label">Telefono</label>
+                <div class="col-md-4">
+                    {{ Form::text('telper2',null,$attributes = ['class'=>'form-control', 'placeholder'=>'Telefono/celular','autocomplete'=>'off',])}}
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Autorizacion N°</label>
+                <div class="col-md-9">
+                    {{ Form::text('autorizacion',null,$attributes = ['class'=>'form-control', 'placeholder'=>'Autorizacion MTC...','autocomplete'=>'off',])}}
+
+                </div>
+            </div>
 
         </div>
         <div class="card-footer">

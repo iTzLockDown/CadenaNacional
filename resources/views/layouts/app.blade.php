@@ -39,7 +39,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-        <img class="navbar-brand-full" src="img/genesys.PNG" width="89" height="25" alt="CoreUI Logo">
+        <img class="navbar-brand-full" src="img/loguito.jpg" width="89" height="25" alt="CoreUI Logo">
         <img class="navbar-brand-minimized" src="assets/img/brand/sygnet.svg" width="30" height="30" alt="CoreUI Logo">
     </a>
     <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
@@ -47,13 +47,7 @@
     </button>
     <ul class="nav navbar-nav d-md-down-none">
         <li class="nav-item px-3">
-            <a class="nav-link" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item px-3">
-            <a class="nav-link" href="#">Users</a>
-        </li>
-        <li class="nav-item px-3">
-            <a class="nav-link" href="#">Settings</a>
+            <a class="nav-link" href="{{route('cliente.emisora')}}">Muestra Estaciones</a>
         </li>
 
 
@@ -146,7 +140,10 @@
                     <a class="nav-link" href="{{route('usuario.lista')}}">
                         <i class="nav-icon icon-user"></i> Usuario</a>
                 </li>
-              
+{{--                    <li class="nav-item">--}}
+{{--                        <a class="nav-link" href="{{route('importar')}}">--}}
+{{--                            <i class="nav-icon icon-user"></i> importar</a>--}}
+{{--                    </li>--}}
 
                 @endif
                 @if(Auth::user()->rol ==1 || Auth::user()->rol ==2 )

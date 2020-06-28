@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="PaginaMuestra/css/style.css">
+    {!! Html::style('PaginaMuestra/css/style.css') !!}
 
 
 </head>
@@ -20,10 +20,14 @@
             </div>
             <div class="col-xs-7 col-sm-9">
                 <ul id="main-menu" class="nav nav-pills hidden-xs">
-                    <li><a href="{{route('cliente.emisora')}}">Inicio</a></li>
-                    <li class="active"><a href="{{route('reg.emisora.cli')}}">Registrar Estacion</a></li>
+                    <li class="active"><a href="{{route('cliente.emisora')}}">Inicio</a></li>
+
                     @if (Route::has('login'))
                         @auth
+                            @if(Auth::user()->verificado=='1')
+                            <li ><a href="{{route('reg.emisora.cli')}}">Registrar Estacion</a></li>
+                                <li ><a href="{{route('cliente.password', array (Auth::user()->id))}}">Cambiar Password</a></li>
+                            @endif
                             <li><a href="">{{Auth::user()->name}}</a></li>
                         @else
                             <li><a href=""></a></li>
@@ -37,6 +41,12 @@
                                 @if(Auth::user()->rol ==1 || Auth::user()->rol==2)
                                 @if(Auth::user()->verificado=='1')
                                     <li id="nada"><a href="{{ url('/home') }}">Ingresar al panel</a></li>
+                                    <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Salir</a></li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                 @else
                                     <li><a href="" style="background: #ffeeba">Verifique su cuenta!</a></li>
                                     <li>
@@ -79,8 +89,8 @@
     </div>
     <div class="visible-xs">
         <ul id="mobile-main-menu">
-            <li><a href="{{route('cliente.emisora')}}">Inicio</a></li>
-            <li class="active"><a href="{{route('reg.emisora.cli')}}">Registrar Estacion</a></li>
+            <li class="active"><a href="{{route('cliente.emisora')}}">Inicio</a></li>
+            <li><a href="{{route('reg.emisora.cli')}}">Registrar Estacion</a></li>
             @if (Route::has('login'))
                 @auth
                     <li><a href="">{{Auth::user()->name}}</a></li>

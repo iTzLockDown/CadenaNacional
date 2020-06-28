@@ -40,7 +40,7 @@
                             <td>{{$emisora->representanteComercial}}</td>
                             <td>{{$emisora->telefono}}</td>
                             <td>
-                                <a href="{{route('emisora.ver.verificar' ,  array ($emisora->id))}}" class="btn btn-sm btn-dark"><i class="fa fa-eye" title="Ver Información" ></i></a>
+                                <a href="{{route('emisora.ver.verificar' ,  array ($emisora->id))}}" class="btn btn-sm btn-dark">Verificar</a>
 
                             </td>
                         </tr>

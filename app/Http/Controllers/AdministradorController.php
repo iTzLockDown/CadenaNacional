@@ -126,6 +126,22 @@ class AdministradorController extends Controller
          }
     }
 
+    public function  getEmisoraProvincia(Request $request, $id)
+    {
+        if($request->ajax()){
+            $emisoras = Emisora::EmisoraProvincia($id);
+            return response()->json($emisoras);
+        }
+    }
+
+    public function  getEmisoraDistrito(Request $request, $id)
+    {
+        if($request->ajax()){
+            $emisoras = Emisora::EmisoraDistrito($id);
+            return response()->json($emisoras);
+        }
+    }
+
     public function  getEmisoras(Request $request, $id, $distrito)
     {
         if($request->ajax()){
@@ -192,5 +208,9 @@ class AdministradorController extends Controller
     public  function importar()
     {
         return view('Emisora.importar');
+    }
+    public function CambiarPassword($id){
+        $TraerUno = User::find($id);
+        return view('Usuario.changepasscli',['usuario'=>$TraerUno]);
     }
 }

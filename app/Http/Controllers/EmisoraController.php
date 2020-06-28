@@ -54,6 +54,14 @@ class EmisoraController extends Controller
         $grabar->telefono = $request->telefono ;
         $grabar->estacion = $request->estacion;
         $grabar->estado = 0;
+
+        $grabar->nomper1 = $request->nomper1;
+        $grabar->telper1 = $request->telper1;
+        $grabar->nomper2 = $request->nomper2;
+        $grabar->telper2 = $request->telper2;
+        $grabar->autorizacion = $request->autorizacion;
+
+
         $grabar->departamento = $request->departamento ;
         $grabar->provincia = $request->provincia ;
         $grabar->distrito = $request->distrito ;
@@ -109,6 +117,11 @@ class EmisoraController extends Controller
         $editar->estacion = $request->estacion;
         $editar->descripcion = $request->descripcion ;
         $editar->telefono = $request->telefono ;
+        $editar->nomper1 = $request->nomper1;
+        $editar->telper1 = $request->telper1;
+        $editar->nomper2 = $request->nomper2;
+        $editar->telper2 = $request->telper2;
+        $editar->autorizacion = $request->autorizacion;
         if (!$request->provincia=='placeholder')
         {
             $editar->departamento = $request->departamento ;

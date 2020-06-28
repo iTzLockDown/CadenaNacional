@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Emisora;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
-use Session;
-class ControllerREgitroEmisora extends Controller
+use Illuminate\Support\Facades\Session;
+
+class ChanguePassCli extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,34 +38,7 @@ class ControllerREgitroEmisora extends Controller
      */
     public function store(Request $request)
     {
-        $grabar = new Emisora();
-        $grabar->nombrecadena = $request->nombrecadena;
-        $grabar->representanteLegal = $request->representanteLegal;
-        $grabar->representanteComercial = $request->representanteComercial;
-        $grabar->frecuencia = $request->frecuencia;
-        $grabar->direccion = $request->direccion ;
-
-        $grabar->numeroRadio = $request->numeroRadio ;
-        $grabar->email = $request->email ;
-        $grabar->ruc = $request->ruc ;
-        $grabar->descripcion = $request->descripcion ;
-        $grabar->telefono = $request->telefono ;
-        $grabar->estacion = $request->estacion;
-        $grabar->estado = 0;
-
-        $grabar->nomper1 = $request->nomper1;
-        $grabar->telper1 = $request->telper1;
-        $grabar->nomper2 = $request->nomper2;
-        $grabar->telper2 = $request->telper2;
-        $grabar->autorizacion = $request->autorizacion;
-
-        $grabar->departamento = $request->departamento ;
-        $grabar->provincia = $request->provincia ;
-        $grabar->distrito = $request->distrito ;
-
-        $grabar->save();
-        Session::flash('message', 'Emisora registrada correctamente.');
-        return Redirect::route('cliente.emisora');
+        //
     }
 
     /**
@@ -85,7 +60,7 @@ class ControllerREgitroEmisora extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -97,13 +72,18 @@ class ControllerREgitroEmisora extends Controller
      */
     public function update(Request $request, $id)
     {
-        $editar =Emisora::find($id);
-        $editar->estado = 1;
+        $editar =User::find($id);
+        $editar->name = $request->name;
+        $editar->email = $request->email;
+
+        $editar->rol = $editar->rol;
+
+        $editar->password = Hash::make($request->password1) ;
 
         $editar -> save();
 
-        Session::flash('message', 'Emisora verificada correctamente.');
-        return Redirect::route('emisora.lista.verificar');
+        Session::flash('message', 'Contraseña actualizado!.');
+        return Redirect::route('cliente.emisora');
     }
 
     /**

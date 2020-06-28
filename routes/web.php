@@ -35,6 +35,8 @@ Route::get('distritos/{id}','AdministradorController@getDistrito');
 Route::get('emisoras/{id}','AdministradorController@getEmisora');
 Route::get('emisorabus/{id}','AdministradorController@getEmi');
 Route::get('emisorabusprov/{id}','AdministradorController@getEmisoraProv');
+Route::get('emisorabusprovincia/{id}','AdministradorController@getEmisoraProvincia');
+Route::get('emisorabusdistrito/{id}','AdministradorController@getEmisoraDistrito');
 Route::get('emisorasbus/{id}/{distritos}', 'AdministradorController@getEmisoras');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -47,9 +49,11 @@ Route::prefix('usuario')->group(function ()
 });
 
 Route::resource('/changue', 'ChanguePassController');
+Route::resource('/changuecli', 'ChanguePassCli');
 
 Route::get('/editarusu/{id}', 'AdministradorController@EditarUsuario')->name('usuario.editar');
 Route::get('/cambiapass/{id}', 'AdministradorController@CambiarPass')->name('usuario.password');
+Route::get('/cambiapassword/{id}', 'AdministradorController@CambiarPassword')->name('cliente.password');
 
 Route::get('/createusu','AdministradorController@CrearUsuario')->name('usuario.create');
 

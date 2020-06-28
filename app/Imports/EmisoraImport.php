@@ -29,7 +29,12 @@ class EmisoraImport implements ToModel
             'estado'=>$row[11],
             'departamento'=>$row[12],
             'provincia'=>$row[13],
-            'distrito'=>$row[14]
+            'distrito'=>$row[14],
+            'nomper1'=>$row[15],
+            'telper1'=>$row[16],
+            'nomper2'=>$row[17],
+            'telper2'=>$row[18],
+            'autorizacion'=>$row[19],
         ]);
     }
 }

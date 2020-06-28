@@ -27,6 +27,14 @@ class CreateEmisorasTable extends Migration
             $table->string('telefono',30)->nullable(false);
             $table->string('estacion', 20)->nullable(false);
             $table->string('estado', 1);
+
+            $table->string('nomper1',50);
+            $table->string('telper1',50);
+
+            $table->string('nomper2',50);
+            $table->string('telper2',50);
+            $table->string('autorizacion',50);
+
             $table->string('departamento',30)->nullable(false);
             $table->string('provincia',30)->nullable(false);
             $table->string('distrito',30)->nullable(false);

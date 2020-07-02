@@ -21,7 +21,14 @@
 
                     <div class="col-lg-3">
                         <label for=""> <strong>Departamento:</strong>  </label> <br>
-                        {!! Form::select('departamento',$departamento,null,['id'=>'departamento','class'=>'form-control']) !!}
+
+                        <select class="form-control" id="departamento" name="departamento">
+                            <option>Seleccionar departamento</option>
+                            @foreach($departamento as $departamentos)
+                                <option value="{{$departamentos->id}}">{{$departamentos->name}}</option>
+                            @endforeach
+                        </select>
+
 
                     </div>
 

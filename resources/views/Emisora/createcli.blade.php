@@ -13,6 +13,13 @@
                                 <div class="card-header">
                                     <h2>Registro de Estacion</h2>
                                 </div>
+                                @if($errors->any())
+                                    <div class="alert alert-warning" role="alert">
+                                        @foreach ($errors->all() as $error)
+                                            <div>{{ $error }}</div>
+                                        @endforeach
+                                    </div>
+                                @endif
                                 <div class="card-body">
                                     {!!Form::open(['route'=>'veremisora.store','method'=>'POST','role'=>'form','enctype'=>'multipart/form-data', 'class'=>'form-horizontal'])!!}
 

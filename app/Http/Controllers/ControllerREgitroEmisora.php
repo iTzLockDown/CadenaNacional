@@ -37,6 +37,33 @@ class ControllerREgitroEmisora extends Controller
     public function store(Request $request)
     {
         $grabar = new Emisora();
+
+        $v = \Validator::make($request->all(), [
+
+            'nombrecadena' => 'required',
+            'representanteLegal' => 'required',
+            'representanteComercial' => 'required',
+            'frecuencia' => 'required',
+            'direccion' => 'required',
+            'numeroRadio' => 'required',
+            'email' => 'required|email',
+            'ruc' => ['required', 'string', 'min:11'],
+            'descripcion' => 'required',
+            'telefono' => ['required', 'min:9'],
+            'estacion' => ['required', 'string'],
+            'autorizacion' => ['required', 'string'],
+            'departamento' => ['required', 'string'],
+            'provincia' => ['required', 'string'],
+            'distrito' => ['required', 'string'],
+
+        ]);
+
+        if ($v->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($v->errors());
+        }
+
+
         $grabar->nombrecadena = $request->nombrecadena;
         $grabar->representanteLegal = $request->representanteLegal;
         $grabar->representanteComercial = $request->representanteComercial;

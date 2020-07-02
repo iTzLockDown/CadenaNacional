@@ -4,6 +4,13 @@
     <div class="card">
         <div class="card-header">
             Registros de <strong>Emisoras</strong></div>
+        @if($errors->any())
+            <div class="alert alert-warning" role="alert">
+                @foreach ($errors->all() as $error)
+                    <div>{{ $error }}</div>
+                @endforeach
+            </div>
+        @endif
         <div class="card-body">
             {!!Form::model($emisora,['route'=>['emisora.update', $emisora->id],'method'=>'PUT','role'=>'form','enctype'=>'multipart/form-data', 'class'=>'form-horizontal'])!!}
 
@@ -82,7 +89,12 @@
             <div class="form-group row">
                 <label class="col-md-3 col-form-label">Departamento</label>
                 <div class="col-md-3">
-                    {!! Form::select('departamento',$departamento,null,['id'=>'departamento','class'=>'form-control']) !!}
+                    <select class="form-control" id="departamento" name="departamento">
+                        <option>Seleccionar departamento</option>
+                        @foreach($departamento as $departamentos)
+                            <option value="{{$departamentos->id}}">{{$departamentos->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <label class="col-md-2 col-form-label text-left">Provincia</label>

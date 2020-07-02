@@ -7,6 +7,7 @@ use App\Emisora;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+use Validator;
 
 class EmisoraController extends Controller
 {
@@ -41,12 +42,42 @@ class EmisoraController extends Controller
     public function store(Request $request)
     {
         $grabar = new Emisora();
+
+
+
+        $v = \Validator::make($request->all(), [
+
+            'nombrecadena' => 'required',
+            'representanteLegal' => 'required',
+            'representanteComercial' => 'required',
+            'frecuencia' => 'required',
+            'direccion' => 'required',
+            'numeroRadio' => 'required',
+            'email' => 'required|email',
+            'ruc' => ['required', 'string', 'min:11'],
+            'descripcion' => 'required',
+            'telefono' => ['required', 'min:9'],
+            'estacion' => ['required', 'string'],
+            'autorizacion' => ['required', 'string'],
+            'departamento' => ['required', 'string'],
+            'provincia' => ['required', 'string'],
+            'distrito' => ['required', 'string'],
+
+
+
+        ]);
+
+        if ($v->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($v->errors());
+        }
+
+
         $grabar->nombrecadena = $request->nombrecadena;
         $grabar->representanteLegal = $request->representanteLegal;
         $grabar->representanteComercial = $request->representanteComercial;
         $grabar->frecuencia = $request->frecuencia;
         $grabar->direccion = $request->direccion ;
-
         $grabar->numeroRadio = $request->numeroRadio ;
         $grabar->email = $request->email ;
         $grabar->ruc = $request->ruc ;
@@ -54,14 +85,11 @@ class EmisoraController extends Controller
         $grabar->telefono = $request->telefono ;
         $grabar->estacion = $request->estacion;
         $grabar->estado = 0;
-
         $grabar->nomper1 = $request->nomper1;
         $grabar->telper1 = $request->telper1;
         $grabar->nomper2 = $request->nomper2;
         $grabar->telper2 = $request->telper2;
         $grabar->autorizacion = $request->autorizacion;
-
-
         $grabar->departamento = $request->departamento ;
         $grabar->provincia = $request->provincia ;
         $grabar->distrito = $request->distrito ;
@@ -103,6 +131,29 @@ class EmisoraController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $v = \Validator::make($request->all(), [
+
+            'nombrecadena' => 'required',
+            'representanteLegal' => 'required',
+            'representanteComercial' => 'required',
+            'frecuencia' => 'required',
+            'direccion' => 'required',
+            'numeroRadio' => 'required',
+            'email' => 'required|email',
+            'ruc' => ['required', 'string', 'min:11'],
+            'descripcion' => 'required',
+            'telefono' => ['required', 'min:9'],
+            'estacion' => ['required', 'string'],
+            'autorizacion' => ['required', 'string'],
+
+        ]);
+
+        if ($v->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($v->errors());
+        }
+
 
         $editar =Emisora::find($id);
         $editar->nombrecadena = $request->nombrecadena;

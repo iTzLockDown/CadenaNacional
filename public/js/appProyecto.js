@@ -223,6 +223,7 @@ function alert($id)
         periodista2.append(res.nomper2);
         telfper2.append(res.telper2);
     });
+    
 }
 $("#emisoraPobl").change(event => {
     var tabladatos = $("#datos")

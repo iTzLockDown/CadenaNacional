@@ -32,7 +32,7 @@ class AdministradorController extends Controller
     }
     public function CrearEmisora()
     {
-        $departamento = Departamento::pluck('name','id' );
+        $departamento = Departamento::all();
         return view('Emisora.create', compact('departamento'));
     }
 
@@ -66,7 +66,7 @@ class AdministradorController extends Controller
     public function EditarEmisora($id)
     {
         $TraerUno = Emisora::find($id);
-        $departamento = Departamento::pluck('name','id' );
+        $departamento = Departamento::all();
         return view('Emisora.update', ['emisora'=>$TraerUno], compact('departamento'));
     }
     public function VerificarInfoEmisora($id)
@@ -106,7 +106,7 @@ class AdministradorController extends Controller
         $TraerMasPoblados = Distrito::
             orderBy('habitantes', 'DESC')
             ->get();
-        $departamento = Departamento::pluck('name','id' );
+        $departamento = Departamento::all();
         return view('welcome', compact('departamento', 'TraerMasPoblados'));
     }
 

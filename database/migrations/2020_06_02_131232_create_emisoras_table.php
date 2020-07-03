@@ -15,7 +15,7 @@ class CreateEmisorasTable extends Migration
     {
         Schema::create('emisoras', function (Blueprint $table) {
             $table->id();
-            $table->string('nombrecadena',30)->nullable(false);
+            $table->string('nombrecadena',250)->nullable(false);
             $table->string('representanteLegal',150)->nullable(false);
             $table->string('representanteComercial',150)->nullable(false);
             $table->string('frecuencia',30)->nullable(false);
@@ -24,7 +24,7 @@ class CreateEmisorasTable extends Migration
             $table->string('email',250)->nullable(false);
             $table->string('ruc',30)->nullable(false);
             $table->string('descripcion',130)->nullable(false);
-            $table->string('telefono',30)->nullable(false);
+            $table->string('telefono',250)->nullable(false);
             $table->string('estacion', 20)->nullable(false);
             $table->string('estado', 1);
 

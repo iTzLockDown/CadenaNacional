@@ -59,6 +59,13 @@ class EmisoraController extends Controller
             'telefono' => ['required', 'min:9'],
             'estacion' => ['required', 'string'],
             'autorizacion' => ['required', 'string'],
+
+            'nomper1' => ['required', 'string'],
+            'telper1' => ['required', 'string'],
+            'nomper2' => ['required', 'string'],
+            'telper2' => ['required', 'string'],
+            'website' => ['required', 'string'],
+
             'departamento' => ['required', 'string'],
             'provincia' => ['required', 'string'],
             'distrito' => ['required', 'string'],
@@ -84,12 +91,13 @@ class EmisoraController extends Controller
         $grabar->descripcion = $request->descripcion ;
         $grabar->telefono = $request->telefono ;
         $grabar->estacion = $request->estacion;
-        $grabar->estado = 0;
+        $grabar->estado = 1;
         $grabar->nomper1 = $request->nomper1;
         $grabar->telper1 = $request->telper1;
         $grabar->nomper2 = $request->nomper2;
         $grabar->telper2 = $request->telper2;
         $grabar->autorizacion = $request->autorizacion;
+        $grabar->website = $request->website;
         $grabar->departamento = $request->departamento ;
         $grabar->provincia = $request->provincia ;
         $grabar->distrito = $request->distrito ;
@@ -145,6 +153,13 @@ class EmisoraController extends Controller
             'descripcion' => 'required',
             'telefono' => ['required', 'min:9'],
             'estacion' => ['required', 'string'],
+
+            'nomper1' => ['required', 'string'],
+            'telper1' => ['required', 'string'],
+            'nomper2' => ['required', 'string'],
+            'telper2' => ['required', 'string'],
+            'website' => ['required', 'string'],
+
             'autorizacion' => ['required', 'string'],
 
         ]);
@@ -173,7 +188,8 @@ class EmisoraController extends Controller
         $editar->nomper2 = $request->nomper2;
         $editar->telper2 = $request->telper2;
         $editar->autorizacion = $request->autorizacion;
-        if (!$request->provincia=='placeholder')
+        $editar->website = $request->website;
+        if (!$request->departamento=='placeholder')
         {
             $editar->departamento = $request->departamento ;
             $editar->provincia = $request->provincia ;

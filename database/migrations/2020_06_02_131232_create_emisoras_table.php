@@ -34,6 +34,7 @@ class CreateEmisorasTable extends Migration
             $table->string('nomper2',150);
             $table->string('telper2',150);
             $table->string('autorizacion',150);
+            $table->string('website', 250);
 
             $table->string('departamento',30)->nullable(false);
             $table->string('provincia',30)->nullable(false);

@@ -10,7 +10,7 @@ class Emisora extends Model
 
     protected $fillable = ['nombrecadena', 'representanteLegal', 'representanteComercial',
         'frecuencia', 'direccion', 'numeroRadio', 'email', 'ruc', 'descripcion',
-        'telefono','estacion','estado', 'nomper1','telper1', 'nomper2', 'telper2', 'autorizacion' ,'departamento', 'provincia', 'distrito'];
+        'telefono','estacion','estado', 'nomper1','telper1', 'nomper2', 'telper2', 'autorizacion', 'website' ,'departamento', 'provincia', 'distrito'];
 
     public static function emisoras($id){
         return Emisora::where('distrito','=',$id)->where('estado',1)

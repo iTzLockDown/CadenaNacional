@@ -52,6 +52,13 @@ class ControllerREgitroEmisora extends Controller
             'telefono' => ['required', 'min:9'],
             'estacion' => ['required', 'string'],
             'autorizacion' => ['required', 'string'],
+
+            'nomper1' => ['required', 'string'],
+            'telper1' => ['required', 'string'],
+            'nomper2' => ['required', 'string'],
+            'telper2' => ['required', 'string'],
+            'website' => ['required', 'string'],
+
             'departamento' => ['required', 'string'],
             'provincia' => ['required', 'string'],
             'distrito' => ['required', 'string'],
@@ -83,7 +90,7 @@ class ControllerREgitroEmisora extends Controller
         $grabar->nomper2 = $request->nomper2;
         $grabar->telper2 = $request->telper2;
         $grabar->autorizacion = $request->autorizacion;
-
+        $grabar->website = $request->website;
         $grabar->departamento = $request->departamento ;
         $grabar->provincia = $request->provincia ;
         $grabar->distrito = $request->distrito ;

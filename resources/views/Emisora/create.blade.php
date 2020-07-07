@@ -11,6 +11,15 @@
                 @endforeach
             </div>
         @endif
+
+        <div class="alert alert-info alert-dismissible" role = "alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            Todos los campos son necesarios, pero no obligatorios. Si no cuenta con alguno,<label class="text-center"> ingrese no asigna!</label>
+        </div>
+
+
         <div class="card-body">
             {!!Form::open(['route'=>'emisora.store','method'=>'POST','role'=>'form','enctype'=>'multipart/form-data', 'class'=>'form-horizontal'])!!}
 
@@ -147,6 +156,13 @@
                 <label class="col-md-3 col-form-label">Autorizacion N°</label>
                 <div class="col-md-9">
                     {{ Form::text('autorizacion',null,$attributes = ['class'=>'form-control', 'placeholder'=>'Autorizacion MTC...','autocomplete'=>'off',])}}
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Pagina de la Estación</label>
+                <div class="col-md-9">
+                    {{ Form::text('website',null,$attributes = ['class'=>'form-control', 'placeholder'=>'Sitio Web...','autocomplete'=>'off',])}}
 
                 </div>
             </div>

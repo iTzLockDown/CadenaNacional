@@ -35,6 +35,7 @@ class EmisoraImport implements ToModel
             'nomper2'=>$row[17],
             'telper2'=>$row[18],
             'autorizacion'=>$row[19],
+            'website'=>$row[20],
         ]);
     }
 }

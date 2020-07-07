@@ -1,5 +1,6 @@
 var distrito =null;
-
+var link =null;
+var state =null;
 $(document).ready(function(){
     $("#principal-one").css({"height":$(window).height() + "px"});
     var flag = false;
@@ -51,7 +52,19 @@ $(document).ready(function(){
 $("#departamento").change(event => {
     $.get(`provincias/${event.target.value}`, function(res, sta){
         $("#provincia").empty();
+        $("#distrito").empty();
+        $state = 'dep';
+        $distrito = null;
+        $distrito = `${event.target.value}`;
+        $("#distrito").append(`<option> Seleccione una opcion </option>`);
+
         $("#provincia").append(`<option> Seleccione una opcion </option>`);
+
+        $("#emisora").empty();
+        $("#emisora").append(`<option> Seleccione una opcion </option>`);
+        $("#emisora").append(`<option value=RADIO> Radio </option>`);
+        $("#emisora").append(`<option value=TELEVISION> Television </option>`);
+
         res.forEach(element => {
             $("#provincia").append(`<option value=${element.id}> ${element.name} </option>`);
         });
@@ -76,8 +89,17 @@ $("#departamento").change(event => {
 
 $("#provincia").change(event => {
     $.get(`distritos/${event.target.value}`, function(res, sta){
+        $state  = 'prov';
+        $distrito = null;
+
+        $distrito = `${event.target.value}`;
         $("#distrito").empty();
         $("#distrito").append(`<option> Seleccione una opcion </option>`);
+
+        $("#emisora").empty();
+        $("#emisora").append(`<option> Seleccione una opcion </option>`);
+        $("#emisora").append(`<option value=RADIO> Radio </option>`);
+        $("#emisora").append(`<option value=TELEVISION> Television </option>`);
         res.forEach(element => {
             $("#distrito").append(`<option value=${element.id}> ${element.name} </option>`);
         });
@@ -101,9 +123,12 @@ $("#provincia").change(event => {
 });
 
 $("#distrito").change(event => {
-        $("#emisora").empty();
+
         $distrito = null;
+
         $distrito = `${event.target.value}`;
+        $state  = 'dist';
+        $("#emisora").empty();
         $("#emisora").append(`<option> Seleccione una opcion </option>`);
         $("#emisora").append(`<option value=RADIO> Radio </option>`);
         $("#emisora").append(`<option value=TELEVISION> Television </option>`);
@@ -131,13 +156,14 @@ $("#distritoPobl").change(event => {
     $("#emisoraPobl").append(`<option> Seleccione una opcion </option>`);
     $("#emisoraPobl").append(`<option value=RADIO> Radio </option>`);
     $("#emisoraPobl").append(`<option value=TELEVISION> Television </option>`);
+
 });
 
 
 
 
 $("#emisora").change(event => {
-    $.get(`emisorasbus/${event.target.value}/${$distrito}`, function(res, sta){
+    $.get(`emisorasbus/${event.target.value}/${$distrito}/${$state}`, function(res, sta){
         $("#myTable").empty();
         $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
             `                     <th>Frecuencia</th>` +
@@ -188,6 +214,9 @@ function alert($id)
     var periodista2=$("#periodista2");
     var telfper2=$("#telfper2");
     var estacion = $("#estacion");
+    var website = $("#website");
+    var websiteref = $("#websiteref");
+    var href = document.getElementById('websiteref');
     $.get(`emisorabus/${$id}`, function(res){
         nombre.empty();
         respLegal.empty();
@@ -199,14 +228,15 @@ function alert($id)
         email.empty();
         estacion.empty();
         telefono.empty();
-        nombre.append(res.nombrecadena);
-
         autorizacion.empty();
         periodista1.empty();
         telfper1.empty();
         periodista2.empty();
         telfper2.empty();
-
+        website.empty();
+        websiteref.empty();
+        link =null;
+        nombre.append(res.nombrecadena);
         respLegal.append(res.representanteLegal);
         repComercial.append(res.representanteComercial);
         ruc.append(res.ruc);
@@ -222,8 +252,17 @@ function alert($id)
         telfper1.append(res.telper1);
         periodista2.append(res.nomper2);
         telfper2.append(res.telper2);
+
+        websiteref.append(res.website);
+
+        website.append(res.website);
+        link = 'https://'+res.website+'/';
     });
-    
+
+}
+function cargarpagina()
+{
+    window.open(link);
 }
 $("#emisoraPobl").change(event => {
     var tabladatos = $("#datos")
@@ -236,7 +275,15 @@ $("#emisoraPobl").change(event => {
     var numeroRad=$("#numeroRad");
     var email=$("#email");
     var telefono=$("#telefono");
-    var descripcion=$("#descripcion");
+    var autorizacion=$("#autorizacion");
+    var periodista1=$("#periodista1");
+    var telfper1=$("#telfper1");
+    var periodista2=$("#periodista2");
+    var telfper2=$("#telfper2");
+    var estacion = $("#estacion");
+    var website = $("#website");
+    var websiteref = $("#websiteref");
+    var href = document.getElementById('websiteref');
 
     $.get(`emisorabus/${event.target.value}`, function(res){
         nombre.empty();
@@ -247,19 +294,37 @@ $("#emisoraPobl").change(event => {
         frencuencia.empty();
         numeroRad.empty();
         email.empty();
+        estacion.empty();
         telefono.empty();
-        descripcion.empty();
+        autorizacion.empty();
+        periodista1.empty();
+        telfper1.empty();
+        periodista2.empty();
+        telfper2.empty();
+        website.empty();
+        websiteref.empty();
+        link =null;
         nombre.append(res.nombrecadena);
-
         respLegal.append(res.representanteLegal);
         repComercial.append(res.representanteComercial);
         ruc.append(res.ruc);
+        estacion.append(res.estacion);
         direccion.append(res.direccion);
         frencuencia.append(res.frecuencia);
         numeroRad.append(res.numeroRadio);
         email.append(res.email);
         telefono.append(res.telefono);
-        descripcion.append(res.descripcion);
+
+        autorizacion.append(res.autorizacion);
+        periodista1.append(res.nomper1);
+        telfper1.append(res.telper1);
+        periodista2.append(res.nomper2);
+        telfper2.append(res.telper2);
+
+        websiteref.append(res.website);
+
+        website.append(res.website);
+        link = 'https://'+res.website+'/';
     });
 });
 

@@ -37,7 +37,7 @@ Route::get('emisorabus/{id}','AdministradorController@getEmi');
 Route::get('emisorabusprov/{id}','AdministradorController@getEmisoraProv');
 Route::get('emisorabusprovincia/{id}','AdministradorController@getEmisoraProvincia');
 Route::get('emisorabusdistrito/{id}','AdministradorController@getEmisoraDistrito');
-Route::get('emisorasbus/{id}/{distritos}', 'AdministradorController@getEmisoras');
+Route::get('emisorasbus/{id}/{distritos}/{state}', 'AdministradorController@getEmisoras');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

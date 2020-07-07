@@ -126,6 +126,7 @@
                                         <p class="card-text"> Periodista             :  <label for="" id="periodista2"> </label> Cel: <label for="" id="telfper2"></label></p>
                                         <p class="card-text"> Ruc                    :  <label for="" id="ruc"></label></p>
                                         <p class="card-text"> Dirección              :  <label for="" id="direccion"></label></p>
+                                        <p class="card-text"> Sitio Web              : <label href="" id="websiteref" onclick="cargarpagina()">Link</label>
                                     </div>
                                 </div>
                             </section>

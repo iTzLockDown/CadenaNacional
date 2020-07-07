@@ -25,7 +25,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                    Todos los campos son necesarios, pero no obligatorios. Si no cuenta con alguno,<label class="text-center"> ingrese no asigna!</label>
+                                    Todos los campos son necesarios, pero algunos no son obligatorios. Si no cuenta con alguno,<label class="text-center"> ingrese no asigna!</label>
                                 </div>
 
 

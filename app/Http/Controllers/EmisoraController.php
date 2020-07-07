@@ -189,13 +189,15 @@ class EmisoraController extends Controller
         $editar->telper2 = $request->telper2;
         $editar->autorizacion = $request->autorizacion;
         $editar->website = $request->website;
-        if (!$request->departamento=='placeholder')
-        {
+
+        if ($request->departamento==="Seleccionar departamento")
+        {}
+        else{
+
             $editar->departamento = $request->departamento ;
             $editar->provincia = $request->provincia ;
             $editar->distrito = $request->distrito ;
         }
-
 
         $editar -> save();
 

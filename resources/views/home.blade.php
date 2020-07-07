@@ -10,7 +10,7 @@
             <label class="text-center"> {{Session::get('message')}}</label>
         </div>
     @endif
-
+    <a href="http://nameless-sands-47965.herokuapp.com/" target="_blank">UNETE A NOSOTROS</a>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

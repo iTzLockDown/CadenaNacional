@@ -163,14 +163,19 @@ class AdministradorController extends Controller
                     ->where('distrito', $distrito)->where('estado',1)
                     ->get();
             }
-
-
             return response()->json($emisora);
         }
     }
 
 
     public function getEmi(Request $request, $id){
+        if($request->ajax()){
+            $emisora = Emisora::where('distrito',$id)->get();
+            return response()->json($emisora);
+        }
+    }
+
+    public function getEmisoraSusanMiAmor(Request $request, $id){
         if($request->ajax()){
             $emisora = Emisora::emisora($id);
             return response()->json($emisora);

@@ -34,6 +34,7 @@ Route::get('provincias/{id}','AdministradorController@getProvincia');
 Route::get('distritos/{id}','AdministradorController@getDistrito');
 Route::get('emisoras/{id}','AdministradorController@getEmisora');
 Route::get('emisorabus/{id}','AdministradorController@getEmi');
+Route::get('emisorabusquedaSu/{id}','AdministradorController@getEmisoraSusanMiAmor');
 Route::get('emisorabusprov/{id}','AdministradorController@getEmisoraProv');
 Route::get('emisorabusprovincia/{id}','AdministradorController@getEmisoraProvincia');
 Route::get('emisorabusdistrito/{id}','AdministradorController@getEmisoraDistrito');

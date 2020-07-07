@@ -150,12 +150,31 @@ $("#distrito").change(event => {
 });
 
 $("#distritoPobl").change(event => {
+
     $("#emisoraPobl").empty();
     $distrito = null;
     $distrito = `${event.target.value}`;
+    $state  = 'dist';
+
     $("#emisoraPobl").append(`<option> Seleccione una opcion </option>`);
     $("#emisoraPobl").append(`<option value=RADIO> Radio </option>`);
     $("#emisoraPobl").append(`<option value=TELEVISION> Television </option>`);
+
+    $.get(`emisorabus/${event.target.value}`, function(res, sta){
+        $("#myTable").empty();
+        $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
+            `                     <th>Frecuencia</th>` +
+            `                     <th>Email</th>` +
+            `                     <th>Telefono</th><th></th></tr></thead>`);
+
+        res.forEach(element => {
+            $("#myTable").append(`<tr id="info"><td>${element.nombrecadena}</td>` +
+                `                     <td>${element.numeroRadio} ${element.frecuencia}</td>` +
+                `                     <td>${element.email}</td>` +
+                `                     <td>${element.telefono}</td>` +
+                `                     <td><button  data-toggle="modal" data-target="#myModal" onClick="alert(${element.id})">Ver</button></td></tr>`);
+        });
+    });
 
 });
 
@@ -180,8 +199,9 @@ $("#emisora").change(event => {
 });
 
 $("#emisoraPobl").change(event => {
-    console.log(`${event.target.value}`);
-    $.get(`emisorasbus/${event.target.value}/${$distrito}`, function(res, sta){
+    console.log($state);
+    console.log($distrito);
+    $.get(`emisorasbus/${event.target.value}/${$distrito}/${$state}`, function(res, sta){
         $("#myTable").empty();
         $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +
             `                     <th>Frecuencia</th>` +
@@ -198,6 +218,7 @@ $("#emisoraPobl").change(event => {
 });
 function alert($id)
 {
+    console.log('estamos aqui'+ $id);
     var tabladatos = $("#datos")
     var nombre = $("#nombreCadena")
     var respLegal=$("#respLegal");
@@ -217,7 +238,7 @@ function alert($id)
     var website = $("#website");
     var websiteref = $("#websiteref");
     var href = document.getElementById('websiteref');
-    $.get(`emisorabus/${$id}`, function(res){
+    $.get(`emisorabusquedaSu/${$id}`, function(res){
         nombre.empty();
         respLegal.empty();
         repComercial.empty();

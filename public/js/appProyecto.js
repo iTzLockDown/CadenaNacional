@@ -182,6 +182,7 @@ $("#distritoPobl").change(event => {
 
 
 $("#emisora").change(event => {
+    console.log(`${event.target.value}`);
     $.get(`emisorasbus/${event.target.value}/${$distrito}/${$state}`, function(res, sta){
         $("#myTable").empty();
         $("#myTable").append(`<thead><tr><th>Nombre Cadena</th>` +

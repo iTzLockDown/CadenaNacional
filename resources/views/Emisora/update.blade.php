@@ -17,7 +17,6 @@
                 <span aria-hidden="true">&times;</span>
             </button>
             Todos los campos son necesarios, pero no obligatorios. Si no cuenta con alguno,<label class="text-center"> ingrese no asigna!</label>
-            <p>Si desea Editar la ubicacion(departamento, provincia o distrito), porfavor complete los 3 campos, son obligatorios.</p>
         </div>
 
         <div class="alert alert-warning alert-dismissible" role = "alert">

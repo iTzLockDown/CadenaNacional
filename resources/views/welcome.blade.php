@@ -153,7 +153,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2>Inicia Sesión Porfavor</h2>
+                        <h2>Inicia Sesión Por favor.</h2>
                     </div>
                 </div>
             </div>

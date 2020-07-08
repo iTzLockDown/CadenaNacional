@@ -47,7 +47,7 @@ ul li {
 	height: 80px;
 	padding: 2px 0 0 20px;
 	margin: 0;
-	background-color: #A3D900;
+	background-color: #ff0000;
 }
 
 #main-logo > a {
@@ -60,7 +60,7 @@ ul li {
 
 #main-logo > a > span {
 	display: block;
-	color: #DFFFBF;
+	color: #ffc6bf;
 	font-size: 13px;
 	font-size: 1.3rem;
 }
@@ -78,7 +78,7 @@ ul li {
 }
 
 #main-menu a:hover {
-	color: #a3d900;
+	color: #ff0000;
 }
 
 #main-menu.nav-pills>li.active>a,
@@ -91,7 +91,7 @@ ul li {
 #main-menu.nav-pills>li.active>a,
 #main-menu.nav-pills>li.active>a:hover,
 #main-menu.nav-pills>li.active>a:focus {
-	color: #a3d900;
+	color: #ff0000;
 }
 
 #main-menu.nav .open>a,

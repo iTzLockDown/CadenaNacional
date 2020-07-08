@@ -91,7 +91,7 @@ section {
 		float: left;
 		width: 50%;
 		margin: 0;
-		
+
 		color: #666;
 		font-size: 60px;
 		font-size: 6rem;
@@ -125,12 +125,12 @@ section {
 		text-align: center;
 		text-decoration: none;
 
-		background-color: #A3D900;
+		background-color: #ff0000;
 	}
 
 	#registration-badge > .do-register:hover {
 		text-decoration: none;
-		background-color: #7CA600;
+		background-color: #ff0000;
 	}
 
 #table-of-contents {
@@ -195,7 +195,7 @@ section {
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
 	section {
 		margin: 40px 0;
 	}
